@@ -19,9 +19,18 @@
         </style>
 </head>
     <body>
-			<audio autoplay="autopaly">
-					<source src="music/Tangem.mp3" type="audio/mp3" />
-			</audio>  
+			<audio id="bgm" src="music/Tangem.mp3" autoplay muted loop></audio>
+
+<script>
+  // Khi người dùng bấm lần đầu (ở đâu cũng được), bật nhạc
+  window.addEventListener("click", function () {
+    const audio = document.getElementById("bgm");
+    if (audio.muted) {
+      audio.muted = false;
+      audio.play();
+    }
+  });
+</script> 
         <div id="main">
             <div id="error">Trình duyệt của bạn không được hỗ trợ. Để được hỗ trợ liên hệ daikupj@gmail.com. Hoặc sử dụng (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
              <div id="wrap">
@@ -213,4 +222,5 @@
 </div>
 </body>
 </html>
+
 
